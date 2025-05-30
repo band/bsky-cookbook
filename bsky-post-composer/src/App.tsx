@@ -10,8 +10,6 @@ function App() {
     return saved || '';
   });
   const [isAttachmentAdded, setIsAttachmentAdded] = useState<boolean>(false);
-  const [isPollAdded, setIsPollAdded] = useState<boolean>(false);
-  const [visibility, setVisibility] = useState<string>('public');
   
   // Character count and limit
   const charCount = postContent.length;
@@ -33,21 +31,10 @@ function App() {
     setIsAttachmentAdded(!isAttachmentAdded);
   };
 
-  // Handle poll toggle
-  const handlePollToggle = () => {
-    setIsPollAdded(!isPollAdded);
-  };
-
-  // Handle visibility change
-  const handleVisibilityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setVisibility(e.target.value);
-  };
-  
   // Clear the post content
   const handleClear = () => {
     setPostContent('');
     setIsAttachmentAdded(false);
-    setIsPollAdded(false);
   };
 
   // Handle post submission (just a demo function)
@@ -57,7 +44,7 @@ function App() {
       return;
     }
     
-    alert(`Post content: ${postContent}\nAttachment: ${isAttachmentAdded ? 'Yes' : 'No'}\nPoll: ${isPollAdded ? 'Yes' : 'No'}\nVisibility: ${visibility}`);
+    alert(`Post content: ${postContent}\nAttachment: ${isAttachmentAdded ? 'Yes' : 'No'}`);
   };
 
   return (
@@ -92,24 +79,6 @@ function App() {
               📎 {isAttachmentAdded ? 'Remove attachment' : 'Add attachment'}
             </button>
             
-            {/* Poll button */}
-            <button 
-              className={`control-button ${isPollAdded ? 'active' : ''}`}
-              onClick={handlePollToggle}
-            >
-              📊 {isPollAdded ? 'Remove poll' : 'Add poll'}
-            </button>
-            
-            {/* Visibility selector */}
-            <select
-              className="visibility-selector"
-              value={visibility}
-              onChange={handleVisibilityChange}
-            >
-              <option value="public">🌎 Public</option>
-              <option value="followers">👥 Followers only</option>
-              <option value="unlisted">🔒 Unlisted</option>
-            </select>
           </div>
           
           {/* Action buttons */}
