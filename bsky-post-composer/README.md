@@ -1,15 +1,17 @@
 # Bluesky Post Composer
 
-A demo React application for composing Bluesky posts with character counting and local storage persistence.
+A React application for composing and posting to Bluesky with secure authentication and post URL capture.
 
 ## Features
 
-- Post composer with character limit enforcement (300 characters)
-- Real-time character counter with visual feedback
-- Local storage persistence for draft posts
-- Demo UI controls (attachments, polls, visibility)
-- Responsive design with Tailwind CSS
-- Prevents posting when over character limit or empty
+- **Secure Authentication**: Login with Bluesky credentials using App Passwords
+- **Real Posting**: Actually posts to your Bluesky account via AT Protocol API
+- **Post URL Capture**: Displays the URL of your posted content
+- **Character Limit Enforcement**: 300 character limit with real-time feedback
+- **Session Persistence**: Secure credential storage and session management
+- **Draft Persistence**: Local storage for unsent posts
+- **Responsive Design**: Clean, mobile-friendly interface
+- **Loading States**: Visual feedback during authentication and posting
 
 ## Getting Started
 
@@ -38,21 +40,45 @@ npm start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## How to Use
+
+1. **Generate an App Password**: 
+   - Go to Bluesky Settings → Privacy and Security → App Passwords
+   - Create a new App Password (NOT your account password)
+
+2. **Login**: 
+   - Enter your Bluesky username/email and the App Password
+   - Your session will be securely stored for future use
+
+3. **Compose and Post**: 
+   - Write your post (up to 300 characters)
+   - Click "Post" to publish to Bluesky
+   - The URL of your post will be displayed
+
+## Security Features
+
+- **App Password Authentication**: Uses App Passwords instead of account passwords
+- **Secure Session Management**: Sessions are encrypted and stored locally
+- **Automatic Session Renewal**: Handles token refresh automatically
+- **No Password Storage**: App Passwords are never permanently stored
+
 ## Technical Details
 
 This project was built with:
 - React + TypeScript
-- Tailwind CSS for styling
-- LocalStorage API for persistence
+- AT Protocol API (`@atproto/api`)
+- Secure credential management
+- LocalStorage for session persistence
+- Responsive CSS design
 
 ## Future Enhancements
 
-This is currently a demo app and doesn't connect to the Bluesky API. Potential future enhancements include:
-- Authentication with Bluesky
-- Actually posting to Bluesky
-- Support for rich text formatting
-- Image upload functionality
-- Improved poll creation interface
+Potential improvements include:
+- Support for rich text formatting and mentions
+- Image and media upload functionality
+- Thread composition support
+- Post scheduling
+- Multiple account management
 
 ## License
 

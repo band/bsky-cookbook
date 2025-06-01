@@ -183,3 +183,126 @@ body {
   font-size: 0.875rem;
   color: var(--gray-color);
 }
+
+/* Authentication Form Styles */
+.auth-form {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.375rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.25);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.login-button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.auth-note {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* User Info Styles */
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--primary-light);
+  border-radius: 0.375rem;
+}
+
+.user-info span {
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.logout-button {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #c62828;
+}
+
+/* Last Post URL Styles */
+.last-post-url {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--success-color);
+  color: white;
+  border-radius: 0.375rem;
+  text-align: center;
+}
+
+.last-post-url p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.last-post-url a {
+  color: white;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.last-post-url a:hover {
+  text-decoration: none;
+}
